@@ -23,6 +23,6 @@ final categories = [
       numberOfItem: 10),
   Category(
       categoryName: 'Sandwich',
-      imagePath: 'asset/images/Sandwich1.jpeg',
+      imagePath: 'asset/images/sandwich1.jpeg',
       numberOfItem: 10)
 ];
