@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/src/widget/bought_foods.dart';
 import 'package:food/src/widget/food_category.dart';
 import 'package:food/src/widget/home_top_info.dart';
 import 'package:food/src/widget/search_field.dart';
@@ -20,7 +21,36 @@ class _HomeScreenState extends State<HomeScreen> {
           HomeTopInfo(),
           FoodCategory(),
           const SizedBox(height: 5.0),
-          SearchField()
+          SearchField(),
+          // header
+          SizedBox(
+            height: 15.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Frequently Bought Foods',
+                style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.black87,
+                    fontWeight: FontWeight.bold),
+              ),
+              GestureDetector(
+                child: Text(
+                  'Salam',
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.yellow[200],
+                      fontWeight: FontWeight.bold),
+                ),
+              )
+            ],
+          ),
+          SizedBox(
+            height: 15.0,
+          ),
+          BoughtFoods()
         ],
       ),
     );
