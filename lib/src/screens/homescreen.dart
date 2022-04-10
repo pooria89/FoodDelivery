@@ -40,10 +40,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               GestureDetector(
                 child: Text(
-                  'Salam',
+                  'Foods',
                   style: TextStyle(
                       fontSize: 20.0,
-                      color: Colors.yellow[200],
+                      color: Colors.yellow[600],
                       fontWeight: FontWeight.bold),
                 ),
               )

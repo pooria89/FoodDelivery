@@ -16,5 +16,13 @@ final foods = [
       category: "2",
       price: 36.0,
       discount: 0,
-      ratings: 15.15)
+      ratings: 15.15),
+  Food(
+      id: "3",
+      name: "Watermellon",
+      imagePath: 'asset/images/watermellon.jpeg',
+      category: "3",
+      price: 11.0,
+      discount: 5,
+      ratings: 6.15)
 ];

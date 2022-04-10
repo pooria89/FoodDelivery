@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/src/pages/signin_page.dart';
 import 'package:food/src/widget/order_card.dart';
 
 class OrderPage extends StatefulWidget {
@@ -14,7 +15,23 @@ class _OrderPageState extends State<OrderPage> {
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 10.0),
       scrollDirection: Axis.vertical,
-      children: [OrderCard(),OrderCard(),OrderCard(), _buildTotalContainer()],
+      children: [
+        OrderCard(),
+        OrderCard(),
+        OrderCard(),
+        OrderCard(),
+        OrderCard(),
+        OrderCard(),
+        OrderCard(),
+        OrderCard(),
+        OrderCard(),
+        OrderCard(),
+        OrderCard(),
+        OrderCard(),
+        OrderCard(),
+        OrderCard(),
+        _buildTotalContainer()
+      ],
     );
   }
 
@@ -84,19 +101,28 @@ class _OrderPageState extends State<OrderPage> {
               ),
             ],
           ),
-          SizedBox(height: 25.0,),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 50.0,
-            decoration: BoxDecoration(
-                color: Colors.blue, borderRadius: BorderRadius.circular(30.0)),
-            child: Center(
-              child: Text(
-                'Proceed To Checkout',
-                style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
+          SizedBox(
+            height: 25.0,
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => SignInPage()));
+            },
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 50.0,
+              decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(30.0)),
+              child: Center(
+                child: Text(
+                  'Proceed To Checkout',
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
               ),
             ),
           )
