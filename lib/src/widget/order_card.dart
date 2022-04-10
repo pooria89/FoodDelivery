@@ -7,15 +7,8 @@ class OrderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: 50.0,
-        ),
-        Text(
-          'Your Food Cart',
-          style: TextStyle(fontSize: 25.0, color: Colors.black),
-        ),
         Padding(
-          padding: EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(.0),
           child: Card(
             child: Row(
               children: [
@@ -117,17 +110,6 @@ class OrderCard extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.0),
-          child: Row(
-            children: [
-              Text(
-                'Cart Total',
-                style: TextStyle(fontSize: 20.0, color: Colors.grey),
-              ),
-            ],
-          ),
-        )
       ],
     );
   }
