@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:food/src/pages/favorite_page.dart';
+
 // pages
 import 'package:food/src/pages/home_page.dart';
 import 'package:food/src/pages/order_page.dart';
 import 'package:food/src/pages/profile_page.dart';
 
+//scope model
+import 'package:food/src/scoped_model/food_model.dart';
+
 class MainScreen extends StatefulWidget {
+
+  final FoodModel foodModel;
+  MainScreen({required this.foodModel});
+
   @override
   _MainScreenState createState() => _MainScreenState();
 }
@@ -22,13 +30,18 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   void initState() {
-    super.initState();
+
+    //call api fetchFoods
+    widget.foodModel.fetchFoods();
+
     homepage = HomePage();
     orderPage = OrderPage();
     favoritePage = FavoritePage();
     profilePage = ProfilePage();
     pages = [homepage, orderPage, favoritePage, profilePage];
     currentPage = homepage;
+    super.initState();
+
   }
 
   @override
