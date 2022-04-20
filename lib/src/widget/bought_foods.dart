@@ -13,16 +13,13 @@ class BoughtFoods extends StatefulWidget {
 
   final double discount;
 
-  final double ratings;
-
-  BoughtFoods({
-    required this.id,
-    required this.name,
-    required this.imagePath,
-    required this.category,
-    required this.price,
-    required this.discount,
-    required this.ratings});
+  BoughtFoods(
+      {required this.id,
+      required this.name,
+      required this.imagePath,
+      required this.category,
+      required this.price,
+      required this.discount});
 
   @override
   _BoughtFoodsState createState() => _BoughtFoodsState();
@@ -95,10 +92,10 @@ class _BoughtFoodsState extends State<BoughtFoods> {
                         SizedBox(
                           width: 10.0,
                         ),
-                        Text(
-                          widget.ratings.toString(),
-                          style: TextStyle(fontSize: 15.0, color: Colors.grey),
-                        ),
+                        // Text(
+                        //   widget.ratings.toString(),
+                        //   style: TextStyle(fontSize: 15.0, color: Colors.grey),
+                        // ),
                       ],
                     ),
                   ],

@@ -20,10 +20,20 @@ class FoodModel extends Model {
         .get(Uri.parse("http://192.168.1.113/food_backend/config/config1.php"))
         .then((http.Response response) {
       final List fetchData = json.decode(response.body);
+      final List<Food> fetchFoodItems = [];
       print(fetchData);
-      fetchData.forEach((food) {
-        print(food);
+      fetchData.forEach((data) {
+        Food food = Food(
+            id: data["id"],
+            name: data["name"],
+            imagePath: data["imagePath"],
+            category: data["category"],
+            price: double.parse(data["price"]),
+            discount: double.parse(data['discount']));
+        fetchFoodItems.add(food);
       });
+      _foods = fetchFoodItems;
+      print(_foods);
     });
   }
 }

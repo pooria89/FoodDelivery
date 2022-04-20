@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:food/src/data/food_data.dart';
 import 'package:food/src/models/food_model.dart';
+import 'package:food/src/scoped_model/food_model.dart';
 import 'package:food/src/widget/bought_foods.dart';
 import 'package:food/src/widget/food_category.dart';
 import 'package:food/src/widget/home_top_info.dart';
 import 'package:food/src/widget/search_field.dart';
+import 'package:food/src/data/food_data.dart';
 
 class HomePage extends StatefulWidget {
+  final FoodModel foodModel;
+  HomePage(this.foodModel);
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Food> _foods = foods;
+  // List<Food> _foods = foods;
 
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    widget.foodModel.fetchFoods();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +63,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             height: 15.0,
           ),
-          Column(children: _foods.map(_buildFoodItem).toList()),
+          Column(children: widget.foodModel.foods.map(_buildFoodItem).toList()),
         ],
       ),
     );
@@ -67,9 +78,8 @@ Widget _buildFoodItem(Food food) {
       name: food.name,
       category: food.category,
       discount: food.discount,
-      imagePath: food.imagePath,
+      imagePath: "assets/images/salad.jpeg",
       price: food.price,
-      ratings: food.ratings,
     ),
   );
 }

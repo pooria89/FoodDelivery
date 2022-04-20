@@ -69,7 +69,6 @@ Widget _buildFoodItem(Food food) {
       discount: food.discount,
       imagePath: food.imagePath,
       price: food.price,
-      ratings: food.ratings,
     ),
   );
 }

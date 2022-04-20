@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
     //call api fetchFoods
     widget.foodModel.fetchFoods();
 
-    homepage = HomePage();
+    homepage = HomePage(widget.foodModel);
     orderPage = OrderPage();
     favoritePage = FavoritePage();
     profilePage = ProfilePage();
