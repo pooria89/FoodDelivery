@@ -78,7 +78,7 @@ Widget _buildFoodItem(Food food) {
       name: food.name,
       category: food.category,
       discount: food.discount,
-      imagePath: "assets/images/salad.jpeg",
+      imagePath: "asset/images/salad.jpeg",
       price: food.price,
     ),
   );

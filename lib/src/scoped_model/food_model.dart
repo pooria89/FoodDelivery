@@ -25,7 +25,7 @@ class FoodModel extends Model {
       fetchData.forEach((data) {
         Food food = Food(
             id: data["id"],
-            name: data["name"],
+            name: data["title"],
             imagePath: data["imagePath"],
             category: data["category"],
             price: double.parse(data["price"]),
