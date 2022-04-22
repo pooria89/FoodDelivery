@@ -4,11 +4,10 @@ import 'package:food/src/pages/favorite_page.dart';
 import 'package:food/src/pages/home_page.dart';
 import 'package:food/src/pages/order_page.dart';
 import 'package:food/src/pages/profile_page.dart';
-//scope model
-import 'package:food/src/scoped_model/food_model.dart';
+import 'package:food/src/scoped_model/main_model.dart';
 
 class MainScreen extends StatefulWidget {
-  final FoodModel foodModel;
+  final MainModel foodModel;
 
   MainScreen({required this.foodModel});
 
@@ -31,7 +30,7 @@ class _MainScreenState extends State<MainScreen> {
     //call api fetchFoods
     widget.foodModel.fetchFoods();
 
-    homepage = HomePage(widget.foodModel);
+    homepage = HomePage();
     orderPage = OrderPage();
     favoritePage = FavoritePage();
     profilePage = ProfilePage();

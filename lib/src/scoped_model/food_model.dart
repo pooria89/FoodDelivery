@@ -26,7 +26,7 @@ class FoodModel extends Model {
         Food food = Food(
             id: data["id"],
             name: data["title"],
-            imagePath: data["imagePath"],
+            imagePath: data["image_path"],
             category: data["category"],
             price: double.parse(data["price"]),
             discount: double.parse(data['discount']));

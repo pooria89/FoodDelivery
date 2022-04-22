@@ -1,30 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:food/src/models/food_model.dart';
-import 'package:food/src/scoped_model/food_model.dart';
+import 'package:food/src/scoped_model/main_model.dart';
 import 'package:food/src/widget/bought_foods.dart';
 import 'package:food/src/widget/food_category.dart';
 import 'package:food/src/widget/home_top_info.dart';
 import 'package:food/src/widget/search_field.dart';
-import 'package:food/src/data/food_data.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class HomePage extends StatefulWidget {
-  final FoodModel foodModel;
-  HomePage(this.foodModel);
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  // List<Food> _foods = foods;
 
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    widget.foodModel.fetchFoods();
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +52,13 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             height: 15.0,
           ),
-          Column(children: widget.foodModel.foods.map(_buildFoodItem).toList()),
+          ScopedModelDescendant<MainModel>(
+            builder: (BuildContext context, Widget child, MainModel model) {
+              return Column(
+                children: model.foods.map(_buildFoodItem).toList(),
+              );
+            },
+          ),
         ],
       ),
     );
@@ -78,7 +73,7 @@ Widget _buildFoodItem(Food food) {
       name: food.name,
       category: food.category,
       discount: food.discount,
-      imagePath: "asset/images/salad.jpeg",
+      imagePath: food.imagePath,
       price: food.price,
     ),
   );
