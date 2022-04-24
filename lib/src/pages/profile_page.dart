@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/src/extension/widget/ImageExt.dart';
+import 'package:food/src/widget/custom_list_tile.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -24,12 +25,17 @@ class _ProfilePageState extends State<ProfilePage> {
                   fontWeight: FontWeight.bold,
                   fontSize: 30.0),
             ),
+            SizedBox(
+              height: 15.0,
+            ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ImageExtension().circleImage(
-                    100.0, 100.0, 'asset/images/profile.jpg', Colors.black),
-                SizedBox(width: 10.0,),
+                    120.0, 120.0, 'asset/images/profile.jpg', Colors.black),
+                SizedBox(
+                  width: 10.0,
+                ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -64,6 +70,57 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 )
               ],
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Text(
+              'Account',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Card(
+              elevation: 5.0,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    CustomListTile(
+                      icon: Icons.location_city,
+                      text: 'Location',
+                    ),
+                    Divider(
+                      height: 10.0,
+                      color: Colors.grey,
+                    ),
+                    CustomListTile(
+                      icon: Icons.visibility,
+                      text: 'Change Password',
+                    ),
+                    Divider(
+                      height: 10.0,
+                      color: Colors.grey,
+                    ),
+                    CustomListTile(
+                      icon: Icons.shopping_cart,
+                      text: 'Shipping',
+                    ),
+                    Divider(
+                      height: 10.0,
+                      color: Colors.grey,
+                    ),
+                    CustomListTile(
+                      icon: Icons.payment,
+                      text: 'Payment',
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
